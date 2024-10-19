@@ -72,6 +72,15 @@
   - 외부로 드러난 관찰 (증상)에 기반해서 숨겨진 가설을 추론할 때 사용한다.
   - 즉, 관찰된 현상을 통해 그 속에 숨겨진 본질을 찾는 것이 목표
 
+### + Laplace Smoothing
+
+- 베이지안 추론 시 한번도 등장하지 않은 이벤트에 대해서는 추론결과가 항상 0이 되는 제로 확률(zero probability) 문제가 발생
+- 이를 해결하기 위해 Laplace Smoothing이라고 함
+  - 1. 각 이벤트의 카운트에 `(분자에)` $\alpha (>0)$를 더해줌 (default = 1)
+  - 2. Observation에 `(분모에)` $k$를 더해줌 (k : 이벤트 종류 수)
+  - 기존 : $P(x_i) = \frac{N_i}{N}$
+  - 변경 후 : $P_{Laplace}(x_i) = \frac{N_i + \alpha}{N + k}$
+
 ---
 
 # ✨ REMIND
