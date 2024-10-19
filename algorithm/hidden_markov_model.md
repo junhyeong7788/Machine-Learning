@@ -68,7 +68,7 @@
 - 확률적인 행동(Stochastic behavior)을 표현, 연속적인 행동의 변화를 관찰
   - a finite set of N states, $S =$ { ${S_1, S_2, ..., S_N}$ }
   - a state transition probability, $P = {p_{ij}}_{M * M}, 1 \leq i, j \leq M$
-  - an initial state distribution, $\pi = $ { $\pi_i$ }
+  - an initial state distribution, $\pi =$ { $\pi_i$ }
 
 ```
 전이 확률 (Transition Probability) : 한 상태에서 다른 상태로 이동할 확률
@@ -79,6 +79,7 @@
 
 - Markov state s와 성공 상태 s'에 대해, 상태 변화 확률은 다음과 같이 정의
   - $P_{ss'} = P(S_{t+1} = s' | S_t = s)$
+  - 즉, 상태가 변화함을 확률로 표현한 행렬
 
 ```
 - Markov state : 마르코프 과정에서 특정 시간 t에서 시스템이 취할 수 있는 상태를 나타냄
@@ -91,7 +92,7 @@
 - 각 행과 열이 마르코프 체인의 상태를 나타냄
   - 각 행은 현재 상태에서 출발하여 다른 상태로 이동할 확률
   - 각 열은 도착 상태를 나타냄
-    $$ P = \begin{bmatrix} p*{11} & p*{12} & ... & p*{1n} \\ p*{21} & p*{22} & ... & p*{2n} \\ ... & ... & ... & ... \\ p*{n1} & p*{n2} & ... & p\_{nn} \end{bmatrix}$$
+  - $$ P = \begin{bmatrix} p*{11} & p*{12} & ... & p*{1n} \\ p*{21} & p*{22} & ... & p*{2n} \\ ... & ... & ... & ... \\ p*{n1} & p*{n2} & ... & p\_{nn} \end{bmatrix}$$
 - 특징
   - `각 행의 합은 1 이다` : 어떤 상태에서 다른 모든 상태로의 전환 확률의 합이 항상 1이 되어야 한다는 것을 의미, 어떤 상태에서 무조건 다른 상태로 이동해야 하기 때문
     - $\sum_{j \in s}{} p_{ij} = 1$
@@ -106,6 +107,8 @@
 state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
 - 각 시간 단계에서 상태가 바뀔 수 있는 확률적 프로세스, 다음 상태는 오직 현재 상태에만 의존하는 '무기억성' 속성을 가짐
 ```
+
+- **Markov Model** : state로 이루어진 Sequence를 상태 전이 확률 행렬로 표현하는 것
 
 ### HMM 구성요소
 
@@ -152,9 +155,9 @@ state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
   - HMM1과 HMM2가 있을 때 어느 HMM에 속할 확률이 높을지?
   - Sequence classification 문제에 활용 가능
 
-### Decoding problem
+### Decoding problem (HMM의 핵심)
 
-- Problem : HMM($\lambda^*$)와 O가 주어졌을 때 최적의 S결정(가장 그럴싸한 은닉 상태 시퀀스 결정)
+- Problem : HMM($\lambda^*$)와 O(Observable sequence)가 주어졌을 때 최적의 S(hidden state sqence)결정(가장 그럴싸한 은닉 상태 시퀀스 결정)
 
   - Solution : `Viterbi Algorithm`
   - example : 오늘 산책, 내일 산책, 모레 연구, 글피 쇼핑을 했다면 각 날들 날씨는?
