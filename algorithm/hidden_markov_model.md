@@ -146,7 +146,7 @@ state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
 - problem ( 평가 문제 ) : HMM($\lambda$)과 O가 주어졌을 때 Observable sequence O'의 확률 (이는 모델이 얼마나 잘 관측 데이터를 설명하는지 평가하는 데 중요)
   - Solution : `Forward Algorithm`
   - example : 오늘 산책, 내일 산책, 모레 연구, 글피 쇼핑할 확률은?
-  - Forward probability (전방 확률, $\alpha_{t}(i)$) = $p(O| \lambda) = \sum_{i=1}^{n} \alpha_{T}(j)$
+  - Forward probability (전방 확률, $\alpha_{t}(i)$ ) = $p(O| \lambda) = \sum_{i=1}^{n} \alpha_{T}(j)$
     - 순차적으로 (뒤 -> 앞으로) 계산
     - 1. $a_1(i) = \pi_i b_i(o_1)$ , $1 \leq i \leq n$
     - 2. $a_{t}(i) = [\sum_{j=1}^{n} a_{t-1}(j) a_{ji}] b_i(o_t)$, $2 \leq t \leq T, 1 \leq i \leq n$
