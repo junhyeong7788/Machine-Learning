@@ -166,8 +166,8 @@ state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
       - $v_{t}(i) = max_{q_1, q_2, ..., q_{t-1}} p(o_1, o_2, ..., o_t, q_1, q_2, ..., q_{t-1}, q_t = s_i | \lambda)$ = $max_{1 \leq j \leq n} [v_{t-1}(j) a_{ji}] b_i(o_t)$ / $2 \leq t \leq T, 1 \leq i \leq n$
       - $v_1(i) = \pi_i b_i(o_1)$
     - 최적 경로 추적
-      - $ \hat q*{T} = argmax*{1 \leq j \leq n} (v\_{T}(j))$
-      - $ \hat Q*{t} = (\hat q*{1}, \hat q*{2}, ..., \hat q*{t})$
+      - $\hat q*{T} = argmax*{1 \leq j \leq n} (v\_{T}(j))$
+      - $\hat Q*{t} = (\hat q*{1}, \hat q*{2}, ..., \hat q*{t})$
 
 - Learning problem
 
