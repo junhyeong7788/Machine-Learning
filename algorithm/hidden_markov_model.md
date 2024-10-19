@@ -39,7 +39,7 @@
 ## Forecasting Problem
 
 - 시계열 데이터를 이용하여 미래를 예측하는 문제
-- N discrete states 중 하나의 상태를 갖는 시스템을 고려 -> $q_t \in$ {${S_1, S_2, ..., S_N}$}
+- N discrete states 중 하나의 상태를 갖는 시스템을 고려 -> $q_t \in$ { ${S_1, S_2, ..., S_N}$ }
 - 정의된 상태는 랜덤으로 변하는 stochastic systems (확률론적인 시스템) 이라고 가정
 - 시스템의 상태는 관측되지 않는 hidden state이며, 관측되는 것은 observation이다.
   - 이때 joint distribution(결합 확률 분포)는 거의 계산 불가능하다 -> $p(q_0, q_1, ..., q_T) = P(q_0)P(q_1|q_0)P(q_2|q_1q_0)P(q_3|q_2q_1q_0)...$
@@ -66,9 +66,9 @@
 - **랜덤 프로세스**이다,
   - 확률적인 시스템의 일종으로 미래의 상태가 오직 현재 상태에만 의존하면 과거의 상태나 어떻게 현재 상태에 이르렀는지는 영향을 미치지 않는 과정을 말함
 - 확률적인 행동(Stochastic behavior)을 표현, 연속적인 행동의 변화를 관찰
-  - a finite set of N states, $S =$ {${S_1, S_2, ..., S_N}$}
+  - a finite set of N states, $S =$ { ${S_1, S_2, ..., S_N}$ }
   - a state transition probability, $P = {p_{ij}}_{M * M}, 1 \leq i, j \leq M$
-  - an initial state distribution, $\pi = ${$\pi_i$}
+  - an initial state distribution, $\pi = $ { $\pi_i$ }
 
 ```
 전이 확률 (Transition Probability) : 한 상태에서 다른 상태로 이동할 확률
@@ -111,7 +111,7 @@ state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
 
 1. Hidden States Sequence (숨겨진 상태 시퀀스)
    - 모델의 내부 상태를 나타내며, 직접 관측할 수 없다.
-   - $(S_1, S_2, ..., S_{t-1}, S_t$)
+   - $(S_1, S_2, ..., S_{t-1}, S_t)$
    - `Markov assumption`을 따름 -> 순차적 특성을 반영
 2. Observable States Sequence (관측 가능한 상태 시퀀스)
    - 숨겨진 상태에 의해 영향을 받는 관측 가능한 이벤트들의 시퀀스
@@ -125,16 +125,16 @@ state sequence : 시간에 따라 나타나는 일련의 상태들을 의미
 1. $A(a_{ij})$ : 상태 전이 확률 행렬 (State Transition Probability Matrix)
    - 한 숨겨진 상태 i에서 다른 숨겨진 상태 j로 이동할 확률을 정의
    - $a_{ij} = P(S_{t+1} = j | S_t = i)$ , $1 \leq i, j \leq n$
-   - $ \sum*{j=1}^{n} a*{ij} = 1$
+   - $\sum*{j=1}^{n} a*{ij} = 1$
 2. $B(b_{jk})$ : 방출 확률 행렬 (Emission Probability Matrix)
    - 특정 숨겨진 상태 j에서 각 관측 가능한 상태 k가 나타날 확률을 정의 (은닉 상태 bj에서 관측치가 vk가 도출될 확률)
    - $b_j(vk) = P(o_t = v_k | q_t = s_j)$, $1 \leq j \leq n, 1 \leq k \leq m$
-   - $ \sum\_{j=1}^{n} b_j(v_k) = 1$
+   - $\sum\_{j=1}^{n} b_j(v_k) = 1$
 3. $\pi = (\pi _ {i})$ : 초기 상태 확률 (Initial State Probability)
    - 시퀀스의 시작에서 각 숨겨진 상태를 갖게 될 확률을 정의
    - $\pi$ -> HMM을 가동 시킬 때 어느 상태에서 시작할 지 결정
    - $\pi_i -> s_i$에서 시작할 확률
-   - $ \sum\_{i=1}^{n} \pi_i = 1$
+   - $\sum\_{i=1}^{n} \pi_i = 1$
 
 ## HMM Problems
 
